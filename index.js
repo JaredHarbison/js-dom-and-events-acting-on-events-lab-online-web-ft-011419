@@ -19,5 +19,16 @@ function addNewElementAsLi() {
 
 function addNewLiOnClick() {
   const submit = document.querySelector('input[type="submit"]')
-  
+  submit.addEventListener("click", function(event){
+    addNewElementAsLi()
+    document.querySelector("input").value = ""
+  })
+}
+
+function clearEmployeeListOnLinkClick(){
+  const clear = document.querySelector("a")
+  const ul = document.querySelector("ul")
+  clear.addEventListener("click", function(event) {
+    ul.innerHTML = ""
+  })
 }
